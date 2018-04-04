@@ -3,20 +3,28 @@ const constants = require('../lib/bitmap-constants');
 const BitmapHeader = require('../lib/bitmap-header');
 const fs = require('fs');
 
+
 describe('bitmap header', () => {
+    
 
     let buffer = null;
+
     beforeEach(() => {
-        // TODO: read './test/test-bitmap.bmp' into buffer variable
+        // TODO(Done): read './test/test-bitmap.bmp' into buffer variable
         // Go ahead and use the "sync" version of the fs methods
         const buffer = fs.readFileSync('EDITME.md');
     });
 
     it('has correct specs', () => {
-        // TODO: read the wiki spec docs to figure out what these values should be
-        assert.ok(constants.PIXEL_OFFSET);
-        assert.ok(constants.BITS_PER_PIXEL_OFFSET);
-        assert.ok(constants.FILE_SIZE_OFFSET);
+        // TODO(Done): read the wiki spec docs to figure out what these values should be
+        
+        const pixelOffset = 10;
+        const bitsPerPixel = 32;
+        const fileSize = 32;
+
+        assert.ok(constants.pixelOffset, true); //10 bits
+        assert.ok(constants.bitsPerPixel, true);//32 bits
+        assert.ok(constants.fileSize, true); //32 bits
     });
 
     it('parses header data', () => {
