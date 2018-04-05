@@ -8,7 +8,11 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "mocha": "mocha",
+    "test": "npm run mocha",
+    "pretest": "npm run lint",
+    "start": "npm run mocha -- -w"
   },
   "repository": {
     "type": "git",
