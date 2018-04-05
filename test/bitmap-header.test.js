@@ -9,7 +9,7 @@ describe('bitmap header', () => {
     beforeEach(() => {
         // TODONE: read './test/test-bitmap.bmp' into buffer variable
         // Go ahead and use the "sync" version of the fs methods
-        const buffer = fs.readFileSync('./test/test-bitmap.bmp');
+        buffer = fs.readFileSync('./test/test-bitmap.bmp');
     });
 
     it('has correct specs', () => {
@@ -20,7 +20,7 @@ describe('bitmap header', () => {
     });
 
     it('parses header data', () => {
-        // TODO: use the constants to populate the following properties
+        // TODONE: use the constants to populate the following properties
         // on the BitmapHeader in its constructor.
         // These test values are correct for the supplied test-bitmap.bmp
         const header = new BitmapHeader(buffer);
