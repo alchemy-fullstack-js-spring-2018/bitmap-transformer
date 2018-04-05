@@ -1,7 +1,7 @@
 {
-  "name": "bitmap-transformer",
+  "name": "pixelswitch",
   "version": "1.0.0",
-  "description": "## Author: Charly Welch <blwbiology@gmail.com>",
+  "description": "Color transformer for bitmap images",
   "main": "index.js",
   "directories": {
     "lib": "lib",
@@ -18,7 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/CharlyWelch/bitmap-transformer.git"
   },
-  "author": "",
+  "author": "Charly Welch <blwBiology@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/CharlyWelch/bitmap-transformer/issues"
