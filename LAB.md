@@ -27,8 +27,8 @@ the location of the needed data using the wikipedia article.
   in the bitmap header and structures it as properties of the `bitmapHeader` instance. -->
 2. Create _at least_ three transformation functions, following the tests in `transformers.test.js`.
   <!-- * Invert -->
-  * Grayscale - see [this article](https://www.johndcook.com/blog/2009/08/24/algorithms-convert-color-grayscale/) 
-  for different ways to calculate
+  <!-- * Grayscale - see [this article](https://www.johndcook.com/blog/2009/08/24/algorithms-convert-color-grayscale/) 
+  for different ways to calculate -->
   * Another transform
     * Different grayscale
     * (red or green or blue) scale the colors (hint: same as grayscale but only multiply one of the colors)
