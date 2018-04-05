@@ -1,6 +1,6 @@
 {
   "name": "pixelswitch",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Color transformer for bitmap images",
   "main": "index.js",
   "directories": {
