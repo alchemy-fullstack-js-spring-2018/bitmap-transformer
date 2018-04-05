@@ -1,7 +1,9 @@
 const assert = require('assert');
 const fs = require('fs');
 const BitmapTransformer = require('../lib/bitmap-transformer');
-const invert = require('../lib/invert-transformer');
+// const invert = require('../lib/invert-transformer');
+const sepia = require('../lib/sepia-transformer');
+
 
 describe('bitmap file transformer', () => {
     
@@ -13,24 +15,15 @@ describe('bitmap file transformer', () => {
         // other test, can you remove (extract) the duplication?
     });
 
-    // "pinning" test, or "snapshot" test
     it('test whole transform', () => {
-        // use the BitmapTransformer class, 
-        // passing in the buffer from the file read
+
         const bitmap = new BitmapTransformer(buffer);
 
-        // call .transform(), which will modify the buffer.
-        // in this api, you pass in a transformation function
-        bitmap.transform(invert);
+        bitmap.transform(sepia);
 
-        // after above step, the buffer has been modified
-        // and is accessible via bitmap.buffer
-
-        // read the output file we saved earlier as
-        // the "standard" expected output file
         const expected = fs.readFileSync('./test/inverted-expected.bmp');
         assert.deepEqual(bitmap.buffer, expected);
 
-        // return fs.writeFileSync('./test/output.bmp', bitmap.buffer);
+        // return fs.writeFileSync('./test/output-sepia.bmp', bitmap.buffer);
     });
 });
