@@ -46,4 +46,4 @@ Evolve your bitmap transform to be streaming!
 ## Bonus
 
 * Adapt the transformer to work for the non-palleted bitmap image
-* Handle row padding
+* Handle row padding for "uneven" bitmap row sizes
