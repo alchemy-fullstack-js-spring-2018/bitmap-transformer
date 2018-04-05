@@ -1,5 +1,5 @@
 {
-  "name": "bitmap-transformer",
+  "name": "bitmap-transformer-igloo",
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/jklipton/bitmap-transformer.git"
   },
-  "author": "Jen Lipton",
+  "author": "Jen Lipton and Charlie Heiner",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jklipton/bitmap-transformer/issues"
