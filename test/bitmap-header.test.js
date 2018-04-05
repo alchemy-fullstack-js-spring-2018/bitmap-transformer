@@ -9,7 +9,7 @@ describe('bitmap header', () => {
     beforeEach(() => {
         // TODONE: read './test/test-bitmap.bmp' into buffer variable
         // Go ahead and use the "sync" version of the fs methods
-        const buffer = fs.readFileSync('./test/test-bitmap.bmp');
+        buffer = fs.readFileSync('./test/test-bitmap.bmp');
     });
 
     it('has correct specs', () => {
