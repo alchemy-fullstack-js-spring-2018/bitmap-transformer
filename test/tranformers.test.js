@@ -5,7 +5,7 @@ const bluer = require('../lib/bluer-transformer');
 
 describe('transformers', () => {
 
-    it.only('invert', () => {
+    it('invert', () => {
         // HINT: invert subtracts each value from 255
         const transformed = invert({
             r: 34,
@@ -20,7 +20,7 @@ describe('transformers', () => {
         });
     });
 
-    it.only('grayscale', () => {
+    it('grayscale', () => {
         // HINT: grayscale assigns the average of all three colors
         // as the new value for each color
         const transformed = grayscale({
@@ -38,7 +38,7 @@ describe('transformers', () => {
 
     // TODO: add a third transformer
 
-    it.only('bluer', () => {
+    it('bluer', () => {
         // HINT: grayscale assigns the average of all three colors
         // as the new value for each color
         const transformed = bluer({
