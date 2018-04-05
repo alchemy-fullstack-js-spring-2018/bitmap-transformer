@@ -6,7 +6,6 @@ const grayscale2 = require('../lib/grayscale-transformer2');
 describe('transformers', () => {
 
     it('invert', () => {
-        // HINT: invert subtracts each value from 255
         const transformed = invert({
             r: 34,
             g: 100,
@@ -21,8 +20,6 @@ describe('transformers', () => {
     }),
 
     it('grayscale', () => {
-        // HINT: grayscale assigns the average of all three colors
-        // as the new value for each color
         const transformed = grayscale({
             r: 34,
             g: 100,
@@ -35,10 +32,8 @@ describe('transformers', () => {
             b: 113
         });
     }),
-    // TODO: add a third transformer
+
     it('grayscale2', () => {
-        // HINT: grayscale assigns the average of all three colors
-        // as the new value for each color
         const transformed = grayscale2({
             r: 34,
             g: 100,
