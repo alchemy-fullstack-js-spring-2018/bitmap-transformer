@@ -31,6 +31,8 @@ describe('bitmap file transformer', () => {
         // read the output file we saved earlier as
         // the "standard" expected output file
         const expected = fs.readFileSync('./test/inverted-expected.bmp');
+        console.log(bitmap.buffer);
+        console.log(expected);
         assert.deepEqual(bitmap.buffer, expected);
 
         // if you don't have a standard file yet, you could write it 
