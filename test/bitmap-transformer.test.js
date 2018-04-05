@@ -22,7 +22,5 @@ describe('bitmap file transformer', () => {
 
         const expected = fs.readFileSync('./test/inverted-expected.bmp');
         assert.deepEqual(bitmap.buffer, expected);
-
-        // return fs.writeFileSync('./test/output.bmp', bitmap.buffer);
     });
 });
