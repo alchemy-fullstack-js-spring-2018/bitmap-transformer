@@ -6,9 +6,7 @@ describe('bitmap header', () => {
 
     let buffer = null;
     beforeEach(() => {
-
         buffer = constants.buffer;
-
     });
 
     it('has correct specs', () => {
