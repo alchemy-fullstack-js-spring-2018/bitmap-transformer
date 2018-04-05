@@ -26,8 +26,10 @@ The invert function taks an rgbOject `{ r: 17, g:255 ,b:114 }` and returns you a
 ### `new BitmapTransformer(buffer)`
 
 The constructor of this class take a buffer as an argument to create a new instence of a BitmapTransformer. 
+
 Here are the two properties of the constructor:
 `BitmapTransformer.buffer = buffer` `BitmapTransformer.header = new BitmapHeader(buffer)`
+
 Here is the class method:
 `BitmapTransformer.transform(fn)`
 
@@ -38,4 +40,5 @@ This method will take bluer, grayscale, or invert as an argument and transform t
 ## Authors
 
 Jacob Perez <pereztjacob@gmail.com>
+
 Stephanie Smith <stephanie.lauren.design@gmail.com>
