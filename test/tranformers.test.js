@@ -35,20 +35,20 @@ describe('transformers', () => {
             b: 113
         });
     });
-    it('adds luminosity', () => {
+    // TODONE: add a third transformer
+    it('luminosity', () => {
         const glow = luminous({
             r: 34,
             g: 100,
             b: 205
         });
         assert.deepEqual(glow, {
-            r:
-            g:
-            b:
+            r: 93,
+            g: 93,
+            b: 93
 
-        })
+        });
 
-    })
+    });
 
-    // TODO: add a third transformer
 });
