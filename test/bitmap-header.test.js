@@ -1,19 +1,20 @@
 const assert = require('assert');
 const constants = require('../lib/bitmap-constants');
 const BitmapHeader = require('../lib/bitmap-header');
-//const BitmapTransform = require('../lib/invert-transform');
+const BitmapTransform = require('../lib/bitmap-transformer');
+const Invert = require('../lib/invert-transformer');
 const fs = require('fs');
 
 
 describe('bitmap header', () => {
     
 
-    //let buffer = null;
+    let buffer = null;
 
     beforeEach(() => {
         // TODO(Done): read './test/test-bitmap.bmp' into buffer variable
         // Go ahead and use the "sync" version of the fs methods
-        // const buffer = fs.readFileSync('EDITME.md');
+        const buffer = fs.readFileSync('EDITME.md');
     });
 
     it('has correct specs', () => {
