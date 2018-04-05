@@ -2,8 +2,6 @@ const assert = require('assert');
 const fs = require('fs');
 const BitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
-const negative = require('../lib/negative-transformer');
-const grayscale = require('../lib/grayscale-transformer');
 
 describe('bitmap file transformer', () => {
     
