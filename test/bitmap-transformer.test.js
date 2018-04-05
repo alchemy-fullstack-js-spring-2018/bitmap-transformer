@@ -2,6 +2,8 @@ const assert = require('assert');
 const fs = require('fs');
 const BitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
+const negative = require('../lib/negative-transformer');
+const grayscale = require('../lib/grayscale-transformer');
 
 describe('bitmap file transformer', () => {
     
@@ -19,8 +21,8 @@ describe('bitmap file transformer', () => {
         bitmap.transform(invert);
 
         const expected = fs.readFileSync('./test/inverted-expected.bmp');
-        // assert.deepEqual(bitmap.buffer, expected);
+        assert.deepEqual(bitmap.buffer, expected);
 
-        return fs.writeFileSync('./test/output.bmp', bitmap.buffer);
+        // return fs.writeFileSync('./test/output.bmp', bitmap.buffer);
     });
 });
