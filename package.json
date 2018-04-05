@@ -1,5 +1,5 @@
 {
-  "name": "bitmap-transformer",
+  "name": "bitmap-transpix",
   "version": "1.0.0",
   "description": "This transforms bitmaps",
   "main": "index.js",
