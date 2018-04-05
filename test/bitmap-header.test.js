@@ -12,13 +12,13 @@ describe('bitmap header', () => {
     let buffer = null;
 
     beforeEach(() => {
-        // TODO(Done): read './test/test-bitmap.bmp' into buffer variable
+        // TODONE: read './test/test-bitmap.bmp' into buffer variable
         // Go ahead and use the "sync" version of the fs methods
         const buffer = fs.readFileSync('EDITME.md');
     });
 
     it('has correct specs', () => {
-        // TODO(Done): read the wiki spec docs to figure out what these values should be
+        // TODONE: read the wiki spec docs to figure out what these values should be
         
     
         assert.ok(constants.PIXEL_OFFSET, 10); //10 bits
