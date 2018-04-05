@@ -4,7 +4,7 @@ const grayscale = require('../lib/grayscale-transformer');
 
 describe('transformers', () => {
 
-    it('invert', () => {
+    it.('invert', () => {
         // HINT: invert subtracts each value from 255
         const transformed = invert({
             r: 34,

@@ -21,7 +21,7 @@ describe('bitmap header', () => {
         assert.ok(newConstant.FILE_SIZE_OFFSET);
     });
 
-    it.only('parses header data', () => {
+    it('parses header data', () => {
         // TODOne: use the constants to populate the following properties
         // on the BitmapHeader in its constructor.
         // These test values are correct for the supplied test-bitmap.bmp
