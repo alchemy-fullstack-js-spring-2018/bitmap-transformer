@@ -9,6 +9,7 @@ describe('bitmap file transformer', () => {
     beforeEach(() => {
         // TODO: read './test/test-bitmap.bmp' into buffer variable
         // Okay to use `sync` file methods for now
+        buffer = fs.readFileSync('./test/test-bitmap.bmp');
 
         // TODO: If the functionality in this before test is same as 
         // other test, can you remove (extract) the duplication?
