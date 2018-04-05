@@ -9,6 +9,7 @@ Evolve your bitmap transform to be streaming!
     * takes a filename as input,
     * returns a promise,
     * that resolves to an object (literal) with the header properties.
+    * (HINT: Use `readFrom` function we created in class)
 * Test will need to evolve as well: 
     * Use mocha async test
   
@@ -20,11 +21,11 @@ Evolve your bitmap transform to be streaming!
   * Returns promise that resolves to bitmapTransformer instance
 * `transform`
   * Change signature:
-      * First parameter is array of transform fns
+      * First parameter is a transform function
       * second paramter is output filename to write to!
   * createWriteStream of output filename
       * Copy the file up to image pixels into write stream!
-      * (HINT: Use `fs.read` and `Buffer.alloc`)
+      * (HINT: Use `readFrom` function we created in class)
   * Use `filename` to createReadStream (HINT: start at offset)
   * Read chunks (do the math! - test with `highWaterMark`)
   * Write transformed chunks to write stream
