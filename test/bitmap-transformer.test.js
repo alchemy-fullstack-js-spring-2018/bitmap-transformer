@@ -7,8 +7,6 @@ describe('bitmap file transformer', () => {
     
     let buffer = null;
     beforeEach(() => {
-        // TODONE: read './test/test-bitmap.bmp' into buffer variable
-        // Okay to use `sync` file methods for now
         buffer = fs.readFileSync('./test/test-bitmap.bmp');
 
         // TODO: If the functionality in this before test is same as 
@@ -19,7 +17,7 @@ describe('bitmap file transformer', () => {
     it('test whole transform', () => {
         // use the BitmapTransformer class, 
         // passing in the buffer from the file read
-        const bitmap = new BitmapTransform(buffer);
+        const bitmap = new BitmapTransformer(buffer);
 
         // call .transform(), which will modify the buffer.
         // in this api, you pass in a transformation function
@@ -32,6 +30,7 @@ describe('bitmap file transformer', () => {
         // the "standard" expected output file
         const expected = fs.readFileSync('./test/inverted-expected.bmp');
         assert.deepEqual(bitmap.buffer, expected);
+
 
         // if you don't have a standard file yet, you could write it 
         // out by commenting above code, using code below and visually inspect
