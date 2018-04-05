@@ -1,4 +1,4 @@
-# Bitmap Transformer
+# PixelSwitch
 
 ## Author: Charly Welch 
 <blwbiology@gmail.com>
@@ -6,6 +6,13 @@
 ## Description
 
 A bitmap transformer that that takes a buffer and applies one or more color transforms to the image. Completed as a student exercise for Alchemy Code Lab, Portland OR. 
+
+## To Use
+
+`npm i pixelswitch`
+
+*will update/add info after evolving program*
+
 
 
 ### Resources
