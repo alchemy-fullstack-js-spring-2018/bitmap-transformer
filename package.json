@@ -1,7 +1,7 @@
 {
   "name": "bitmap-transformer",
   "version": "1.0.0",
-  "description": "",
+  "description": "This transforms bitmaps",
   "main": "index.js",
   "directories": {
     "lib": "lib",
