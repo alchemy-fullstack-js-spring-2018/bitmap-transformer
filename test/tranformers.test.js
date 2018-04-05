@@ -19,8 +19,6 @@ describe('transformers', () => {
     });
 
     it('grayscale', () => {
-        // HINT: grayscale assigns the average of all three colors
-        // as the new value for each color
         const transformed = grayscale({
             r: 34,
             g: 100,
