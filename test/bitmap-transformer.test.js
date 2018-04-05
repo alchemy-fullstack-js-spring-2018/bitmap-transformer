@@ -7,7 +7,7 @@ describe('bitmap file transformer', () => {
     
     let buffer = null;
     beforeEach(() => {
-        // TODO: read './test/test-bitmap.bmp' into buffer variable
+        // TODONE: read './test/test-bitmap.bmp' into buffer variable
         // Okay to use `sync` file methods for now
         buffer = fs.readFileSync('./test/test-bitmap.bmp');
 
@@ -19,7 +19,7 @@ describe('bitmap file transformer', () => {
     it('test whole transform', () => {
         // use the BitmapTransformer class, 
         // passing in the buffer from the file read
-        const bitmap = new BitmapTransformer(buffer);
+        const bitmap = new BitmapTransform(buffer);
 
         // call .transform(), which will modify the buffer.
         // in this api, you pass in a transformation function
