@@ -1,8 +1,6 @@
 const assert = require('assert');
 const constants = require('../lib/bitmap-constants');
 const BitmapHeader = require('../lib/bitmap-header');
-// const BitmapTransform = require('../lib/bitmap-transformer');
-// const Invert = require('../lib/invert-transformer');
 const fs = require('fs');
 
 

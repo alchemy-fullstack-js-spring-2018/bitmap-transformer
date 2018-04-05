@@ -7,11 +7,9 @@ describe('bitmap file transformer', () => {
     
     let buffer = null;
     beforeEach(() => {
-        // TODO: read './test/test-bitmap.bmp' into buffer variable
-        // Okay to use `sync` file methods for now
-
-        // TODO: If the functionality in this before test is same as 
-        // other test, can you remove (extract) the duplication?
+        // TODONE
+        buffer = fs.readFileSync('./test/test-bitmap.bmp');
+        // TODONE: The functionality in this test is same as test in //bitmap-header.test.js
     });
 
     // "pinning" test, or "snapshot" test
