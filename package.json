@@ -8,7 +8,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "frog": "npm run lint",
+    "pretest": "npm run lint",
     "test": "mocha",
     "start": "npm run test -- -w"
   },
