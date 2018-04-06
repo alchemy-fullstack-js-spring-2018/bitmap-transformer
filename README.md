@@ -8,4 +8,6 @@ Transforming bitmaps!
 
 If/When publish to npm, will let you know
 
-## API
+## NPM package name 
+
+tashazun 
