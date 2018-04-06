@@ -5,20 +5,20 @@ const invert = require('../lib/invert-transformer');
 const constants = require('../lib/bitmap-constants');
 
 describe('bitmap file transformer', () => {
-    
-    let buffer = null;
+    let testTransformer;
+    const file = './test/test-bitmap.bmp';
+
     beforeEach(() => {
-        buffer = constants.buffer;
+        testTransformer = BitmapTransformer.create(file);
+        console.log(testTransformer);
     });
 
-    it('test whole transform', () => {
+    it.only('test whole transform', () => {
 
-        const bitmap = new BitmapTransformer(buffer);
-
-        bitmap.transform(invert);
-
+        const result = testTransformer.transform(invert, './test/copy-invert.bmp');
         const bufferTest = fs.readFileSync('./test/inverted-expected.bmp');
-        assert.deepEqual(bitmap.buffer, bufferTest);
+
+        assert.deepEqual(result, bufferTest);
 
     });
 });
