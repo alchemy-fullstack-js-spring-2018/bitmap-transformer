@@ -4,6 +4,7 @@ const BitmapHeader = require('../lib/bitmap-header');
 const fs = require('fs');
 
 
+
 describe('bitmap header', () => {
     
 

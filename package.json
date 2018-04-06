@@ -1,15 +1,18 @@
 {
   "name": "transformation-bit-by-bit",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "transforms image bits",
   "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "test": "mocha",
-    "start": "npm run test -- -w"
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "npm run test:mocha",
+    "test:mocha": "mocha",
+    "start": "nodemon --exec 'npm run test:mocha'"
   },
   "repository": {
     "type": "git",
