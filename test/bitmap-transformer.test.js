@@ -4,7 +4,7 @@ const BitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
 // const sepia = require('../lib/sepia-transformer');
 
-
+// TODO: evolve tests to be async
 describe('bitmap file transformer', () => {
     
     let buffer = null;
