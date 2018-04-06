@@ -9,8 +9,11 @@ describe('bitmap file transformer', () => {
     const file = './test/test-bitmap.bmp';
 
     beforeEach(() => {
-        testTransformer = BitmapTransformer.create(file);
-        console.log('testTransformer is: ', testTransformer);
+        return BitmapTransformer.create(file)
+            .then(data =>{
+                testTransformer = data;
+                return testTransformer;
+            });
     });
 
     it.only('test whole transform', () => {
