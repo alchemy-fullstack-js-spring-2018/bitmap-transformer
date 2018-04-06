@@ -11,9 +11,13 @@ describe('bitmap file transformer', () => {
         buffer = fs.readFileSync('./test/test-bitmap.bmp');
     });
 
+    // it('create header', () => {
+    //     const bitmap = new BitmapTransformer(buffer);
+    //     bitmap.create(buffer);
+    // });
+
     it('test whole transform', () => {
         const bitmap = new BitmapTransformer(buffer);
-
         bitmap.transform(invert);
 
         const expected = fs.readFileSync('./test/inverted-expected.bmp');
