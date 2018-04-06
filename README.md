@@ -1,5 +1,7 @@
 TRANSFORMATION (bit by bit...)
+npm name : transformation-bit-by-bit.
 
+install npm transformation-bit-by-bit
 ##
 This node package transforms our image data into readable bits and bytes, and then alters them bit by bit in either color, grayscale, or luminous style.
 
