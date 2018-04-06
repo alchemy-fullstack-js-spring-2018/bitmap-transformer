@@ -10,7 +10,7 @@ describe('bitmap file transformer', () => {
 
     beforeEach(() => {
         testTransformer = BitmapTransformer.create(file);
-        console.log(testTransformer);
+        console.log('testTransformer is: ', testTransformer);
     });
 
     it.only('test whole transform', () => {
