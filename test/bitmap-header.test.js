@@ -1,14 +1,8 @@
 const assert = require('assert');
-const fs = require('fs');
 const constants = require('../lib/bitmap-constants');
 const bitmapHeader = require('../lib/bitmap-header');
 
 describe('bitmap header', () => {
-
-    let buffer = null;
-    beforeEach(() => {
-        buffer = fs.readFileSync('./test/test-bitmap.bmp');
-    });
 
     it('has correct specs', () => {
         assert.ok(constants.PIXEL_OFFSET);
@@ -17,9 +11,11 @@ describe('bitmap header', () => {
     });
 
     it.only('parses header data', () => {
-        const header = bitmapHeader(buffer);
-        assert.equal(header.pixelOffset, 54);
-        assert.equal(header.bitsPerPixel, 24);
-        assert.equal(header.fileSize, 30054);
+        return bitmapHeader('./test/test-bitmap.bmp')
+            .then ((header) => {
+                assert.equal(header.pixelOffset, 54);
+                assert.equal(header.bitsPerPixel, 24);
+                assert.equal(header.fileSize, 30054);
+            });
     });
 });
