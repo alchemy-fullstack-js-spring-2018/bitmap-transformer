@@ -5,6 +5,9 @@ const BitmapHeader = require('../lib/bitmap-header');
 
 describe('bitmap header', () => {
 
+    // TODO: Update test for new bitmap-header code
+    // Use mocha async test
+
     let buffer = null;
     beforeEach(() => {
         buffer = fs.readFileSync('./test/test-bitmap.bmp');
