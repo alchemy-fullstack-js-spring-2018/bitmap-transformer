@@ -10,13 +10,13 @@ describe('bitmap header', () => {
     //     buffer = fs.readFileSync('./test/test-bitmap.bmp');
     // });
 
-    it.only('has correct specs', () => {
+    it('has correct specs', () => {
         assert.ok(constants.PIXEL_OFFSET);
         assert.ok(constants.BITS_PER_PIXEL_OFFSET);
         assert.ok(constants.FILE_SIZE_OFFSET);
     });
 
-    it.only('parses header data', () => {
+    it('parses header data', () => {
         const header = bitmapHeader('./test/test-bitmap.bmp');
   
         assert.equal(header.pixelOffset, 54);
