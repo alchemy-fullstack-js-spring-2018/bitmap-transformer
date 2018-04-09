@@ -3,24 +3,31 @@ const fs = require('fs');
 const BitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
 // const sepia = require('../lib/sepia-transformer');
+const { promisify } = require('util');
+const unlink = promisify(require('fs').unlink);
 
-// TODO: evolve tests to be async
 describe('bitmap file transformer', () => {
     
-    let buffer = null;
+    let tester = null;
+    const file = './test/test-bitmap.bmp';
+    const testFile = './test/tested-invert.bmp';
+
     beforeEach(() => {
-        buffer = fs.readFileSync('./test/test-bitmap.bmp');
+        return unlink(testFile)
+            .catch(err => {
+                if(err.code !== 'ENOENT') throw err;
+            });
+    });
+
+    beforeEach(() => {
+        tester = BitmapTransformer.create(file);
     });
 
     it('test whole transform', () => {
 
-        const bitmap = new BitmapTransformer(buffer);
-
-        bitmap.transform(invert);
-
         const expected = fs.readFileSync('./test/inverted-expected.bmp');
-        assert.deepEqual(bitmap.buffer, expected);
+        const result = tester.transform(invert, testFile);
 
-        // return fs.writeFileSync('./test/output-sepia.bmp', bitmap.buffer);
+        assert.deepEqual(expected, result);
     });
 });
