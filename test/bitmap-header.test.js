@@ -17,7 +17,6 @@ describe('bitmap header', () => {
     });
 
     it.only('parses header data', () => {
-        // const header = bitmapHeader('./test/test-bitmap.bmp');
         bitmapHeader('./test/test-bitmap.bmp')
             .then(header => {
                 assert.equal(header.pixelOffset, 54);
