@@ -4,19 +4,19 @@ const bitmapHeader = require('../lib/bitmap-header');
 
 describe('bitmap header', () => {
     const file = './test/test-bitmap.bmp';
-    let buffer = null;
+    let buffer = null; //eslint-disable-line
 
     beforeEach(() => {
         buffer = constants.buffer;
     });
 
-    it.only('has correct specs', () => {
+    it('has correct specs', () => {
         assert.ok(constants.PIXEL_OFFSET);
         assert.ok(constants.BITS_PER_PIXEL_OFFSET);
         assert.ok(constants.FILE_SIZE_OFFSET);
     });
 
-    it.only('parses header data', () => {
+    it('parses header data', () => {
 
         return bitmapHeader(file)
             .then((data) => {
