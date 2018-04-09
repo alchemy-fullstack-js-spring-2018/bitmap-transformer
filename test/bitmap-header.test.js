@@ -16,7 +16,7 @@ describe('bitmap header', () => {
         assert.ok(constants.FILE_SIZE_OFFSET);
     });
 
-    it.only('parses header data', () => {
+    it('parses header data', () => {
         bitmapHeader('./test/test-bitmap.bmp')
             .then(header => {
                 assert.equal(header.pixelOffset, 54);
