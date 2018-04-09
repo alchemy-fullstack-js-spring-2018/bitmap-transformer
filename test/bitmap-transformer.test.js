@@ -4,7 +4,7 @@ const BitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
 
 describe('bitmap file transformer', () => {
-    
+    const actualFile = './test/test-bitmap.bmp';
     // let buffer = null;
     
     // beforeEach(() => {
@@ -18,8 +18,8 @@ describe('bitmap file transformer', () => {
 
     it('test whole transform', () => {
         return BitmapTransformer.create('./test/test-bitmap.bmp')
-            .then ((header, filename) => {
-                header.transform(invert);
+            .then ((header) => {
+                header.transform(invert, actualFile);
                 const expected = fs.readFileSync('./test/inverted-expected.bmp');
                 assert.deepEqual(header, expected);
             });
