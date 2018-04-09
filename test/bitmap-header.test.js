@@ -16,11 +16,13 @@ describe('bitmap header', () => {
         assert.ok(constants.FILE_SIZE_OFFSET);
     });
 
-    it('parses header data', () => {
-        const header = bitmapHeader('./test/test-bitmap.bmp');
-  
-        assert.equal(header.pixelOffset, 54);
-        assert.equal(header.bitsPerPixel, 24);
-        assert.equal(header.fileSize, 30054);
+    it.only('parses header data', () => {
+        // const header = bitmapHeader('./test/test-bitmap.bmp');
+        bitmapHeader('./test/test-bitmap.bmp')
+            .then(header => {
+                assert.equal(header.pixelOffset, 54);
+                assert.equal(header.bitsPerPixel, 24);
+                assert.equal(header.fileSize, 30054);                
+            });
     });
 });
