@@ -19,22 +19,22 @@ This will require the use of node `Buffer` in order to manipulate binary data, *
 
 This lab is highly structured and there are tests to guide you:
 
-1. Start with the tests in `bitmap-header.test.js`. This will require you to find
+<!-- 1. Start with the tests in `bitmap-header.test.js`. This will require you to find
 the location of the needed data using the wikipedia article.
    1. The first test requires that you have the right constants defined. You will need to figure these
    out from the wikipedia article
    2. The second test requires that you create a `BitmapHeader` class that finds the information
-  in the bitmap header and structures it as properties of the `bitmapHeader` instance.
-2. Create _at least_ three transformation functions, following the tests in `transformers.test.js`.
-  * Invert
-  * Grayscale - see [this article](https://www.johndcook.com/blog/2009/08/24/algorithms-convert-color-grayscale/) 
-  for different ways to calculate
-  * Another transform
+  in the bitmap header and structures it as properties of the `bitmapHeader` instance. -->
+<!-- 2. Create _at least_ three transformation functions, following the tests in `transformers.test.js`. -->
+  <!-- * Invert -->
+  <!-- * Grayscale - see [this article](https://www.johndcook.com/blog/2009/08/24/algorithms-convert-color-grayscale/) 
+  for different ways to calculate -->
+  <!-- * Another transform
     * Different grayscale
-    * (red or green or blue) scale the colors (hint: same as grayscale but only multiply one of the colors)
+    * (red or green or blue) scale the colors (hint: same as grayscale but only multiply one of the colors) -->
 
-3. The test in `bitmap-transformer.test.js` requires you to integrate header and transformations using a `BitmapHeader` class. The test is a pinning, or snapshot test, and a pre-converted standard is provided
-for the inverted transformer
+<!-- 3. The test in `bitmap-transformer.test.js` requires you to integrate header and transformations using a `BitmapHeader` class. The test is a pinning, or snapshot test, and a pre-converted standard is provided
+for the inverted transformer -->
 
 4. When complete, publish your package to npm!
 

@@ -1,0 +1,31 @@
+{
+  "name": "pixelswitch",
+  "version": "1.0.3",
+  "description": "Color transformer for bitmap images",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "mocha": "mocha",
+    "test": "npm run mocha",
+    "pretest": "npm run lint",
+    "start": "npm run mocha -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharlyWelch/bitmap-transformer.git"
+  },
+  "author": "Charly Welch <blwBiology@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CharlyWelch/bitmap-transformer/issues"
+  },
+  "homepage": "https://github.com/CharlyWelch/bitmap-transformer#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "mocha": "^5.0.5"
+  }
+}
