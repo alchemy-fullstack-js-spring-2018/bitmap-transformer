@@ -5,13 +5,13 @@ Evolve your bitmap transform to be streaming!
 
 ## `BitmapHeader`
 
-* Change BitmapHeader to be a function that
+<!-- * Change BitmapHeader to be a function that
     * takes a filename as input,
     * returns a promise,
     * that resolves to an object (literal) with the header properties.
     * (HINT: Use `readFrom` function we created in class)
 * Test will need to evolve as well: 
-    * Use mocha async test
+    * Use mocha async test -->
   
 ## BitmapTransformer
 
