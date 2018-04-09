@@ -24,7 +24,8 @@ describe('bitmap file transformer', () => {
                 const bit = bitmap.transform(invert, './test/inverted-output.bmp');
                 console.log('BIT: ', bit);
                 const expected = fs.readFileSync('./test/inverted-expected.bmp');
-                assert.deepEqual(bit.buffer, expected);
+                const test = fs.readFileSync('./test/inverted-output.bmp')
+                assert.deepEqual(test, expected);
             }).catch(err => {
                 console.log('error: ', err);
             });
