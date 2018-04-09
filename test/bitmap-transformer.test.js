@@ -2,37 +2,39 @@ const assert = require('assert');
 const fs = require('fs');
 const bitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
+const { promisify } = require('util');
+const unlink = promisify(require('fs').unlink);
+
 
 describe('bitmap file transformer', () => {
     
-    let buffer = null;
+    let test = null;
+    const file = './test/test-bitmap.bmp';
+    const testFile = './test/inverted-expected.bmp';
+
     beforeEach(() => {
-        // TODONE
-        buffer = fs.readFileSync('./test/test-bitmap.bmp');
-        // TODONE: The functionality in this test is same as test in //bitmap-header.test.js
+        return unlink(testFile
+            .catch(err => {
+                if(err.code !== 'ENOENT') throw err;
+            }));
+        
+    });
+    beforeEach(() => {
+        return bitmapTransformer.create(file)
+            .then(data => {
+                test = data;
+                return test;
+            });
     });
 
-    // "pinning" test, or "snapshot" test
+    //"snapshot" test
     it('test whole transform', () => {
-        // use the BitmapTransformer class, 
-        // passing in the buffer from the file read
-        const bitmap = new BitmapTransformer(buffer);
+        return test.transform(invert, testFile)
+            .then(() => {
+                const expected = fs.readFileSync('./test/inverted-expected/');
+                const result = fs.readFileSync(testFile);
 
-        // call .transform(), which will modify the buffer.
-        // in this api, you pass in a transformation function
-        bitmap.transform(invert);
-
-        // after above step, the buffer has been modified
-        // and is accessible via bitmap.buffer
-
-        // read the output file we saved earlier as
-        // the "standard" expected output file
-        const expected = fs.readFileSync('./test/inverted-expected.bmp');
-        assert.deepEqual(bitmap.buffer, expected);
-
-        // if you don't have a standard file yet, you could write it 
-        // out by commenting above code, using code below and visually inspect
-        // the file for correctness.
-        // return fs.writeFileSync('./test/output.bmp', bitmap.buffer);
+                assert.deepEqual(expected, result);
+            });
     });
 });
