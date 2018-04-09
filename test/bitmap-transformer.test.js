@@ -13,7 +13,6 @@ describe('bitmap file transformer', () => {
     it.only('test whole transform', () => {
         BitmapTransformer.create(fileName)
             .then(bitmap => {
-                console.log('BITMAP!', bitmap);
                 bitmap.transform(invert);
                 const expected = fs.readFileSync('./test/inverted-expected.bmp');
                 assert.deepEqual(bitmap.buffer, expected);
