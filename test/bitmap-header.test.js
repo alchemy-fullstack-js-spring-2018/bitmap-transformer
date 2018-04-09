@@ -19,8 +19,8 @@ describe('bitmap header', () => {
         assert.ok(constants.FILE_SIZE_OFFSET);
     });
 
-    it('parses header data', () => {
-        const header = new BitmapHeader(buffer);
+    it.only('parses header data', () => {
+        const header = new BitmapHeader('./test/test-bitmap.bmp');
         assert.equal(header.pixelOffset, 54);
         assert.equal(header.bitsPerPixel, 24);
         assert.equal(header.fileSize, 30054);
