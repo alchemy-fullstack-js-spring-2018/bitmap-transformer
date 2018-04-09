@@ -15,12 +15,12 @@ Evolve your bitmap transform to be streaming!
   
 ## BitmapTransformer
 
+<!-- * `transform`
 * Add a static `create` method that takes a filename:
   * Creates the header (async)
   * Passes that to BitmapTransformer along with filename
-  * Returns promise that resolves to bitmapTransformer instance
-* `transform`
-  * Change signature:
+  * Returns promise that resolves to bitmapTransformer instance -->
+  <!-- * Change signature:
       * First parameter is a transform function
       * second paramter is output filename to write to!
   * createWriteStream of output filename
@@ -30,7 +30,7 @@ Evolve your bitmap transform to be streaming!
   * Read chunks (do the math! - test with `highWaterMark`)
   * Write transformed chunks to write stream
   * End writeStream on readStream close
-  * Return promise that fires when done!
+  * Return promise that fires when done! -->
   
 ### Rubric:
 * Bitmap Header
