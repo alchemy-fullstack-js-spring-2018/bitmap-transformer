@@ -20,10 +20,12 @@ describe('bitmap header', () => {
     });
 
     it.only('parses header data', () => {
-        const header = new BitmapHeader('./test/test-bitmap.bmp');
-        console.log('header?:', header);
-        assert.equal(header.pixelOffset, 54);
-        assert.equal(header.bitsPerPixel, 24);
-        assert.equal(header.fileSize, 30054);
+        return new BitmapHeader('./test/test-bitmap.bmp')
+            .then(header => {
+                console.log('header?:', header);
+                assert.equal(header.pixelOffset, 54);
+                assert.equal(header.bitsPerPixel, 24);
+                assert.equal(header.fileSize, 30054);
+            });
     });
 });
