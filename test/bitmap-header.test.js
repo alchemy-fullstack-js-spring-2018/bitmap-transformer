@@ -19,7 +19,6 @@ describe('bitmap header', () => {
     it('parses header data', () => {
         return new BitmapHeader('./test/test-bitmap.bmp')
             .then(header => {
-                console.log('header?:', header);
                 assert.equal(header.pixelOffset, 54);
                 assert.equal(header.bitsPerPixel, 24);
                 assert.equal(header.fileSize, 30054);
