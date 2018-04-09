@@ -1,40 +1,63 @@
 const assert = require('assert');
+const { promisify } = require('util');
+const unlink = promisify(require('fs').unlink);
 const fs = require('fs');
 const BitmapTransformer = require('../lib/bitmap-transformer');
-const invert = require('../lib/invert-transform');
+const readFrom = require('../lib/read-from');
+const invert = require('../lib/invert-transformer');
 
 describe('bitmap file transformer', () => {
-    
-    let buffer = null;
-    beforeEach(() => {
-        // TODO: read './test/test-bitmap.bmp' into buffer variable
-        // Okay to use `sync` file methods for now
 
-        // TODO: If the functionality in this before test is same as 
-        // other test, can you remove (extract) the duplication?
+    const readFile = file => (fs.readFileSync(file));
+    const testFile = './test/sunrise.bmp';
+    const invertedFile = './test/inverted-results.bmp';
+    
+    beforeEach(() => {
+        return unlink(invertedFile)
+            .catch(err => {
+                if(err.code !== 'ENOENT') throw err;
+            }); 
     });
 
-    // "pinning" test, or "snapshot" test
-    it('test whole transform', () => {
-        // use the BitmapTransformer class, 
-        // passing in the buffer from the file read
-        const bitmap = new BitmapTransformer(buffer);
+    let transformer = null;
+    beforeEach(() => {
+        return BitmapTransformer.create(testFile)
+            .then(newTransformer => transformer = newTransformer);
+    });
 
-        // call .transform(), which will modify the buffer.
-        // in this api, you pass in a transformation function
-        bitmap.transform(invert);
+    it('has a static "create" method that returns a new instance with properties "inputFile" and "header"', () => {
+        assert.equal(transformer.inputFile, testFile);
+        assert.deepEqual(transformer.header, { pixelOffset: 54, bitsPerPixel: 24, fileSize: 1680056 });
+    });
 
-        // after above step, the buffer has been modified
-        // and is accessible via bitmap.buffer
+    it('copies the header from a bmp file to a new file', () => {
+        let originalHeader, generatedHeader;
 
-        // read the output file we saved earlier as
-        // the "standard" expected output file
-        const buffer = fs.readFileSync('./test/inverted-expected.bmp');
-        assert.deepEqual(bitmap.buffer, buffer);
+        function fetchNewHeader() {
+            return transformer.transform(invert, invertedFile)
+                .then(() => {
+                    return readFrom(invertedFile, 54)
+                        .then(buffer => generatedHeader = buffer);
+                });
+        }
 
-        // if you don't have a standard file yet, you could write it 
-        // out by commenting above code, using code below and visually inspect
-        // the file for correctness.
-        // return fs.writeFileSync('./test/output.bmp', bitmap.buffer);
+        function fetchOriginalHeader() {
+            readFrom(testFile, 54)
+                .then(buffer => originalHeader = buffer);
+        }
+            
+        Promise.all([fetchNewHeader(), fetchOriginalHeader()])
+            .then(() => {
+                assert.deepEqual(originalHeader, generatedHeader);
+            });
+    });
+
+    it('can invert a bitmap image', () => {
+        return transformer.transform(invert, invertedFile)
+            .then(() => {
+                const actual = readFile(invertedFile);
+                const expected = readFile('./test/inverted-sunrise-photoshop.bmp');
+                assert.deepEqual(actual, expected);
+            });
     });
 });

@@ -1,11 +1,11 @@
 const assert = require('assert');
 const invert = require('../lib/invert-transformer');
 const grayscale = require('../lib/grayscale-transformer');
+const lumGray = require('../lib/lum-gray-transformer');
 
 describe('transformers', () => {
 
     it('invert', () => {
-        // HINT: invert subtracts each value from 255
         const transformed = invert({
             r: 34,
             g: 100,
@@ -20,8 +20,6 @@ describe('transformers', () => {
     });
 
     it('grayscale', () => {
-        // HINT: grayscale assigns the average of all three colors
-        // as the new value for each color
         const transformed = grayscale({
             r: 34,
             g: 100,
@@ -35,5 +33,17 @@ describe('transformers', () => {
         });
     });
 
-    // TODO: add a third transformer
+    it('luminous grayscale', () => {
+        const transformed = lumGray({
+            r: 34,
+            g: 100,
+            b: 205
+        });
+
+        assert.deepEqual(transformed, {
+            r: 93,
+            g: 93,
+            b: 93
+        });
+    });
 });
