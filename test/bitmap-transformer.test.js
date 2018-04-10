@@ -2,8 +2,8 @@ const assert = require('assert');
 const fs = require('fs');
 const bitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
-const { promisify } = require('util');
-const unlink = promisify(require('fs').unlink);
+//const { promisify } = require('util');
+//const unlink = promisify(require('fs').unlink);
 
 
 describe('bitmap file transformer', () => {
