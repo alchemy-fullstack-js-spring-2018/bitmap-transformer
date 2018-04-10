@@ -17,7 +17,7 @@ describe('transformers', () => {
             g: 155,
             b: 50
         });
-    }),
+    });
 
     it('grayscale', () => {
         const transformed = grayscale({
@@ -31,7 +31,7 @@ describe('transformers', () => {
             g: 113,
             b: 113
         });
-    }),
+    });
 
     it('grayscale2', () => {
         const transformed = grayscale2({
