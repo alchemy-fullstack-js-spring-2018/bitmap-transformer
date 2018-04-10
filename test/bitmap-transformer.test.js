@@ -13,7 +13,7 @@ describe('bitmap file transformer', () => {
     const testFile = './test/inverted-expected.bmp';
 
     beforeEach(() => {
-        return unlink(testFile
+        return fs.unlink(testFile
             .catch(err => {
                 if(err.code !== 'ENOENT') throw err;
             }));
