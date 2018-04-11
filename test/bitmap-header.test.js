@@ -16,12 +16,8 @@ describe('bitmap header', () => {
         assert.ok(constants.FILE_SIZE_OFFSET);
     });
 
-    it.only('parses header data', () => {
+    it('parses header data', () => {
         const header = new BitmapHeader(buffer);
-
-        header.pixelOffset = buffer.readIntLE(constants.PIXEL_OFFSET, 4);
-        header.bitsPerPixel = buffer.readIntLE(constants.BITS_PER_PIXEL_OFFSET, 2);
-        header.fileSize = buffer.readIntLE(constants.FILE_SIZE_OFFSET, 4);
         
         assert.equal(header.pixelOffset, 54);
         assert.equal(header.bitsPerPixel, 24);
