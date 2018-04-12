@@ -18,7 +18,7 @@ describe('bitmap header', () => {
     // TODONE: use the constants to populate the following properties
     // on the BitmapHeader in its constructor.
     // These test values are correct for the supplied test-bitmap.bmp
-        return bitmapHeader('./test/test-bitmap.bmp')
+        return bitmapHeader('./test-bitmap-header.bmp')
             .then(header => {
                 assert.equal(header.pixelOffset, 54);
                 assert.equal(header.bitsPerPixel, 24);
