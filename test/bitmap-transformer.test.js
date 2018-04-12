@@ -2,18 +2,34 @@ const assert = require('assert');
 const fs = require('fs');
 const bitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
+//const { promisify } = require('util');
+//const unlink = promisify(require('fs').unlink);
+
 
 describe('bitmap file transformer', () => {
     
-    let buffer = null;
+    let test = null;
+    const file = './test/test-bitmap.bmp';
+    const testFile = './test/inverted-expected.bmp';
+
     beforeEach(() => {
-        // TODONE
-        buffer = fs.readFileSync('./test/test-bitmap.bmp');
-        // TODONE: The functionality in this test is same as test in //bitmap-header.test.js
+        return fs.unlink(testFile
+            .catch(err => {
+                if(err.code !== 'ENOENT') throw err;
+            }));
+        
+    });
+    beforeEach(() => {
+        return bitmapTransformer.create(file)
+            .then(data => {
+                test = data;
+                return test;
+            });
     });
 
-    // "pinning" test, or "snapshot" test
+    //"snapshot" test
     it('test whole transform', () => {
+
   
         const bitmap = new bitmapTransformer(buffer);
         bitmap.transform(invert);
@@ -22,5 +38,6 @@ describe('bitmap file transformer', () => {
         assert.deepEqual(bitmap.buffer, expected);
 
        
+
     });
 });

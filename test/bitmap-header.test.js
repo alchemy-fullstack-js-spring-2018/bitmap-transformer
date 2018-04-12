@@ -3,8 +3,6 @@ const constants = require('../lib/bitmap-constants');
 const bitmapHeader = require('../lib/bitmap-header');
 
 
-
-
 describe('bitmap header', () => {
 
     it('has correct specs', () => {
