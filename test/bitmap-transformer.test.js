@@ -8,7 +8,7 @@ const invert = require('../lib/invert-transformer');
 
 describe('bitmap file transformer', () => {
     
-    let test = null;
+    let buffer = null;
     const file = './test/test-bitmap.bmp';
     const testFile = './test/inverted-expected.bmp';
 
@@ -22,8 +22,8 @@ describe('bitmap file transformer', () => {
     beforeEach(() => {
         return bitmapTransformer.create(file)
             .then(data => {
-                test = data;
-                return test;
+                buffer = data;
+                return buffer;
             });
     });
 
