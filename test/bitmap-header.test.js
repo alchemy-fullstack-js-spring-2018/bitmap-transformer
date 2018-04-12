@@ -9,8 +9,6 @@ describe('bitmap header', () => {
 
     it('has correct specs', () => {
         // TODONE: read the wiki spec docs to figure out what these values should be
-        
-    
         assert.ok(constants.PIXEL_OFFSET); 
         assert.ok(constants.BITS_PER_PIXEL_OFFSET);
         assert.ok(constants.FILE_SIZE_OFFSET); 
