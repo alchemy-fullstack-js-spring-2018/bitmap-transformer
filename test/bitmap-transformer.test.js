@@ -29,12 +29,15 @@ describe('bitmap file transformer', () => {
 
     //"snapshot" test
     it('test whole transform', () => {
-        return test.transform(invert, testFile)
-            .then(() => {
-                const expected = fs.readFileSync('./test/inverted-expected/');
-                const result = fs.readFileSync(testFile);
 
-                assert.deepEqual(expected, result);
-            });
+  
+        const bitmap = new bitmapTransformer(buffer);
+        bitmap.transform(invert);
+
+        const expected = fs.readFileSync('./test/inverted-expected.bmp');
+        assert.deepEqual(bitmap.buffer, expected);
+
+       
+
     });
 });
