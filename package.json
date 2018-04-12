@@ -1,28 +1,32 @@
 {
-  "name": "bitmap-transformer",
-  "version": "1.0.0",
-  "description": "",
+  "name": "transformation-bit-by-bit",
+  "version": "2.0.2",
+  "description": "transforms image bits",
   "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "test": "mocha",
-    "start": "npm run test -- -w"
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "npm run test:mocha",
+    "test:mocha": "mocha",
+    "start": "nodemon --exec 'npm run test:mocha'"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/J3ffcon1/bitmap-transformer.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Jeff and Katlyn",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/J3ffcon1/bitmap-transformer/issues"
   },
   "homepage": "https://github.com/J3ffcon1/bitmap-transformer",
   "devDependencies": {
     "eslint": "^4.19.1",
-    "mocha": "^5.0.5"
+    "mocha": "^5.0.5",
+    "nodemon": "^1.17.3"
   }
 }
