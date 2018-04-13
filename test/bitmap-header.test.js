@@ -19,10 +19,10 @@ describe('bitmap header', () => {
     // on the BitmapHeader in its constructor.
     // These test values are correct for the supplied test-bitmap.bmp
         return bitmapHeader('./test/test-bitmap.bmp')
-            .then(header => {
-                assert.equal(header.pixelOffset, 54);
-                assert.equal(header.bitsPerPixel, 24);
-                assert.equal(header.fileSize, 30054);
+            .then(this.header, () => {
+                assert.equal(this.header.pixelOffset, 54);
+                assert.equal(this.header.bitsPerPixel, 24);
+                assert.equal(this.header.fileSize, 30054);
             });
     });
 });
