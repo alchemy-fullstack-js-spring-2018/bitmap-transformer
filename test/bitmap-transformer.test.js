@@ -1,7 +1,7 @@
-const assert = require('assert');
-const fs = require('fs');
+// const assert = require('assert');
+// const fs = require('fs');
 const bitmapTransformer = require('../lib/bitmap-transformer');
-const invert = require('../lib/invert-transformer');
+// const invert = require('../lib/invert-transformer');
 // const { promisify } = require('util');
 //const testFile =  require('./test/inverted-expected.bmp');
 
