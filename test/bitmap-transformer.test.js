@@ -25,18 +25,18 @@ describe('bitmap file transformer', () => {
     });
         
     //"snapshot" test
-    it('test whole transform', () => {
-        //let buffer = buffer;
-        // const bitmap = new bitmapTransformer(tester);
-        return tester.transform(invert, './test/inverted-expected.bmp')
-            .then((data) => {
-                const knownGood = fs.readFileSync('./test/inverted-expected.bmp');
-                // const tester = fs.readFileSync('./');
-                setTimeout(3000);
-                assert.deepEqual(data, knownGood);
-            });
+    // it('test whole transform', () => {
+    //     //let buffer = buffer;
+    //     // const bitmap = new bitmapTransformer(tester);
+    //     return tester.transform(invert, './test/inverted-expected.bmp')
+    //         .then((data) => {
+    //             const knownGood = fs.readFileSync('./test/inverted-expected.bmp');
+    //             // const tester = fs.readFileSync('./');
+    //             setTimeout(3000);
+    //             assert.deepEqual(data, knownGood);
+    //         });
      
-    });
+    // });
 });
 // function newFunction(err) {
 //     if(err.code !== 'ENOENT')
