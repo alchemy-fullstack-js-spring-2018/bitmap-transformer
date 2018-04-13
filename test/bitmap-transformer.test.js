@@ -3,18 +3,16 @@ const fs = require('fs');
 const bitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transformer');
 // const { promisify } = require('util');
-//const picture = promisify(require('fs').unlink);
 //const testFile =  require('./test/inverted-expected.bmp');
 
 describe('bitmap file transformer', () => {
     let tester = null;
     const file = './test/test-bitmap.bmp';
-    const pixelOffset = '../lib/bitmap-constants';
 
     // beforeEach(() => {
     //     return (file)
     //         .catch(err => {
-    //             // if(err.code !== 'ENOENT') throw err;
+    //             newFunction('File Not Found');
     //         });
     // });
         
@@ -29,12 +27,19 @@ describe('bitmap file transformer', () => {
     //"snapshot" test
     it('test whole transform', () => {
         //let buffer = buffer;
-        const bitmap = new bitmapTransformer(tester);
+        // const bitmap = new bitmapTransformer(tester);
         return tester.transform(invert, './test/inverted-expected.bmp')
-            .then(() => {
-                const testFile = fs.readFileSync('./test/inverted-expected.bmp');
-                const tester = fs.readFileSync('./');
-                assert.deepEqual(bitmap.tester, tester);
+            .then((data) => {
+                const knownGood = fs.readFileSync('./test/inverted-expected.bmp');
+                // const tester = fs.readFileSync('./');
+                setTimeout(3000);
+                assert.deepEqual(data, knownGood);
             });
+     
     });
 });
+// function newFunction(err) {
+//     if(err.code !== 'ENOENT')
+//         throw err;
+// }
+
