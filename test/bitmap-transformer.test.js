@@ -1,22 +1,22 @@
-const assert = require('assert');
-const fs = require('fs');
-const BitmapTransformer = require('../lib/bitmap-transformer');
-const invert = require('../lib/invert-transformer');
+// const assert = require('assert');
+// const fs = require('fs');
+// const BitmapTransformer = require('../lib/bitmap-transformer');
+// const invert = require('../lib/invert-transformer');
 
-describe('bitmap file transformer', () => {
+// describe('bitmap file transformer', () => {
     
-    let buffer = null; /* eslint-disable-line */
+//     let buffer = null; /* eslint-disable-line */
 
-    beforeEach(() => {
-        buffer = fs.readFileSync('./test/test-bitmap.bmp');
-    });
+//     beforeEach(() => {
+//         buffer = fs.readFileSync('./test/test-bitmap.bmp');
+//     });
 
-    it('test whole transform', () => {
-        const bitmap = new BitmapTransformer(buffer);
+//     it('test whole transform', () => {
+//         const bitmap = new BitmapTransformer(buffer);
 
-        bitmap.transform(invert, buffer);
+//         bitmap.transform(invert, buffer);
 
-        const expected = fs.readFileSync('./test/inverted-expected.bmp');
-        assert.deepEqual(bitmap.buffer, expected);
-    });
-});
+//         const expected = fs.readFileSync('./test/inverted-expected.bmp');
+//         assert.deepEqual(bitmap.buffer, expected);
+//     });
+// });
