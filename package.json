@@ -18,8 +18,8 @@
     "type": "git",
     "url": "git+https://github.com/victorbofill/bitmap-transformer.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Victor Bofill and Henry Oliviera",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/victorbofill/bitmap-transformer/issues"
   },
