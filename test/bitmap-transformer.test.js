@@ -1,11 +1,11 @@
-const assert = require('assert');
+// const assert = require('assert');
 const fs = require('fs');
-const BitmapTransformer = require('../lib/bitmap-transformer');
-const invert = require('../lib/invert-transformer');
+// const BitmapTransformer = require('../lib/bitmap-transformer');
+// const invert = require('../lib/invert-transformer');
 
 describe('bitmap file transformer', () => {
-    
-    let buffer = null;
+
+    let buffer = null; /* eslint-disable-line */
     beforeEach(() => {
         buffer = fs.readFileSync('./test/test-bitmap.bmp');
     });
