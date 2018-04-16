@@ -5,7 +5,8 @@ const BitmapHeader = require('../lib/bitmap-header');
 
 describe('bitmap header', () => {
 
-    let buffer = null;
+    let buffer = null; /* eslint-disable-line */
+
     beforeEach(() => {
         buffer = fs.readFileSync('./test/test-bitmap.bmp');
     });
